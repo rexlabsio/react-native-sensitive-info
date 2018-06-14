@@ -25,7 +25,7 @@ import android.content.SharedPreferences;
 import android.hardware.fingerprint.FingerprintManager;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v7.app.AppCompatActivity;
+import com.facebook.react.ReactActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,7 +52,7 @@ public class FingerprintAuthenticationDialogFragment extends DialogFragment
     private FingerprintUiHelper.Callback mCallback;
     private FingerprintManager.CryptoObject mCryptoObject;
     private FingerprintUiHelper mFingerprintUiHelper;
-    private AppCompatActivity mActivity;
+    private ReactActivity mActivity;
 
     private SharedPreferences mSharedPreferences;
 
@@ -140,7 +140,7 @@ public class FingerprintAuthenticationDialogFragment extends DialogFragment
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        mActivity = (AppCompatActivity) getActivity();
+        mActivity = (ReactActivity) getActivity();
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
     }
 
